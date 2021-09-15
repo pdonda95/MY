@@ -5,23 +5,21 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 ### :large_blue_diamond: [Spacing](#spacing)
 
    - [Keyword Spacing](#1-keyword-spacing)
-   - [Multiple blank lines not allowed]()
-   - [Semicolons must have a space after and no space before]()
-   - [Unary operators must have a space after]()
-   - [Space before a function declaration]()
-   - [Space inside single line blocks]()
-   - [Space between colon and value in key value pairs]()
-   - [Do not use multiple spaces]()
-   - [Use spaces inside comments]()
-   - [Must have a space before blocks]()
-   - [The * in yield* expression must have a space before and after]()
-   - [No whitespace before properties]()
-   - [No padding within blocks]()
-   - [No whitespace between spread operators and their expressions]()
-   - [No space inside parentheses]()
-   - [No spacing in template strings]()
-   - [No irregular white space]()
-   - [Whitespace are not allowed at the end of line]()
+   - [Multiple blank lines not allowed](#2-multiple-blank-lines-not-allowed)
+   - [Semicolons must have a space after and no space before](#3-semicolons-must-have-a-space-after-and-no-space-before)
+   - [Unary operators must have a space after](#4-unary-operators-must-have-a-space-after)
+   - [Space before a function declaration parentheses](#5-space-before-a-function-declaration-parentheses)
+   - [Space inside single line blocks](#6-space-inside-single-line-blocks)
+   - [Space between colon and value in key value pairs](#7-space-between-colon-and-value-in-key-value-pairs)
+   - [Do not use multiple spaces](#8-do-not-use-multiple-spaces)
+   - [Use spaces inside comments](#9-use-spaces-inside-comments)
+   - [Must have a space before blocks](#10-must-have-a-space-before-blocks)
+   - [The asterisk in yield* expression must have a space before and after](#11-the-asterisk-in-yield-expression-must-have-a-space-before-and-after)
+   - [No whitespace before properties](#12-no-whitespace-before-properties)
+   - [No padding within blocks](#13-no-padding-within-blocks)
+   - [No whitespace between spread operators and their expressions](#14-no-whitespace-between-spread-operators-and-their-expressions)
+   - [No space inside parentheses](#15-no-space-inside-parentheses)
+   - [No spacing in template strings](#16-no-spacing-in-template-strings)
 
 ### :large_blue_diamond: [Indentation](#indentation)
 
@@ -127,13 +125,144 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ## Spacing
 
-##### 1. Keyword Spacing
+#### 1. Keyword Spacing
+
 ```javascript
-if (condition) { ... }   // ✓ ok
 if(condition) { ... }    // ✗ avoid
+if (condition) { ... }   // ✓ ok
 ```
 
+#### 2. Multiple blank lines not allowed 
 
+```javascript
+// ✗ avoid
+var value = 'hello world'
+
+
+console.log(value)
+```
+```javascript
+// ✓ ok
+var value = 'hello world'
+console.log(value)
+```
+
+#### 3. Semicolons must have a space after and no space before
+
+```javascript
+for (let i = 0 ;i < items.length ;i++) {...}    // ✗ avoid
+for (let i = 0; i < items.length; i++) {...}    // ✓ ok
+```
+
+#### 4. Unary operators must have a space after
+
+```javascript
+typeof!admin        // ✗ avoid
+typeof !admin       // ✓ ok
+```
+
+#### 5. Space before a function declaration parentheses
+
+```javascript
+function name(arg) { ... }    // ✗ avoid
+function name (arg) { ... }   // ✓ ok
+```
+```javascript
+run(function() { ... })       // ✗ avoid
+run(function () { ... })      // ✓ ok
+```
+
+#### 6. Space inside single line blocks
+
+```javascript
+function foo () {return true}    // ✗ avoid
+function foo () { return true }  // ✓ ok
+```
+
+#### 7. Space between colon and value in key value pairs
+
+```javascript
+var obj = { 'key' : 'value' }    // ✗ avoid
+var obj = { 'key' :'value' }     // ✗ avoid
+var obj = { 'key':'value' }      // ✗ avoid
+var obj = { 'key': 'value' }     // ✓ ok
+```
+
+#### 8. Do not use multiple spaces
+
+```javascript
+const id =    1234    // ✗ avoid
+const id = 1234       // ✓ ok
+```
+
+#### 9. Use spaces inside comments
+
+```javascript
+//comment           // ✗ avoid
+// comment          // ✓ ok
+
+/*comment*/         // ✗ avoid
+/* comment */       // ✓ ok
+```
+
+#### 10. Must have a space before blocks
+
+```javascript
+if (admin){...}     // ✗ avoid
+if (admin) {...}    // ✓ ok
+```
+
+#### 11. The asterisk in yield* expression must have a space before and after
+
+```javascript
+yield* increment()    // ✗ avoid
+yield * increment()   // ✓ ok
+```
+
+#### 12. No whitespace before properties
+
+```javascript
+user .name      // ✗ avoid
+user.name       // ✓ ok
+```
+
+#### 13. No padding within blocks
+
+```javascript
+// ✗ avoid
+if (user) {
+                       
+  const name = getName()
+
+}
+```
+```javascript
+// ✓ ok
+if (user) {
+  const name = getName()    
+}
+```
+
+#### 14. No whitespace between spread operators and their expressions
+
+```javascript
+fn(... args)    // ✗ avoid
+fn(...args)     // ✓ ok
+```
+
+#### 15. No space inside parentheses
+
+```javascript
+getName( name )     // ✗ avoid
+getName(name)       // ✓ ok
+```
+
+#### 16. No spacing in template strings
+
+```javascript
+const message = `Hello, ${ name }`    // ✗ avoid
+const message = `Hello, ${name}`      // ✓ ok
+```
 
 ## Indentation
 ## Declaration
