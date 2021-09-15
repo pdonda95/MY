@@ -2,7 +2,7 @@
 
 This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
-### [Spacing](#spacing)
+### :heavy_minus_sign: [Spacing](#spacing)
 
    - [Keyword Spacing]()
    - [Multiple blank lines not allowed]()
@@ -23,7 +23,7 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
    - [No irregular white space]()
    - [Whitespace are not allowed at the end of line]()
 
-### [Indentation](#indentation)
+### :large_blue_circle: [Indentation](#indentation)
 
    - [Avoid mixing spaces and tabs for indentation]()
    - [Use tab]()
