@@ -127,7 +127,7 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ## Spacing
 
-1. Keyword Spacing
+##### 1. Keyword Spacing
 ```javascript
 if (condition) { ... }   // ✓ ok
 if(condition) { ... }    // ✗ avoid
