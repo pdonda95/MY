@@ -2,7 +2,7 @@
 
 This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
-### :heavy_minus_sign: [Spacing](#spacing)
+### :large_blue_diamond: [Spacing](#spacing)
 
    - [Keyword Spacing]()
    - [Multiple blank lines not allowed]()
@@ -23,12 +23,12 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
    - [No irregular white space]()
    - [Whitespace are not allowed at the end of line]()
 
-### :large_blue_circle: [Indentation](#indentation)
+### :large_blue_diamond: [Indentation](#indentation)
 
    - [Avoid mixing spaces and tabs for indentation]()
    - [Use tab]()
 
-### [Declaration](#declaration)
+### :large_blue_diamond: [Declaration](#declaration)
 
    - [Remove unused variables]()
    - [Camelcase when naming variables and functions]()
@@ -43,7 +43,7 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
    - [Avoid assigning variable to itself]()
    - [Regular string must not contain template literal placeholders]()
 
-### [Operators](#operators)
+### :large_blue_diamond: [Operators](#operators)
 
    - [Assignment operator must be spaced]()
    - [=== instead of ==]()
@@ -53,14 +53,14 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
    - [Avoid unnecessary boolean casts]()
    - [typeof must be compared to a valid string]()
 
-### [Comma](#comma)
+### :large_blue_diamond: [Comma](#comma)
 
    - [Spacing]()
    - [Style]()
    - [Trailing commas not allowed]()
    - [Avoid using comma operator]()
 
-### [Function](#function)
+### :large_blue_diamond: [Function](#function)
 
    - [No duplicate arguments]()
    - [No unnecessary parentheses around function expressions]()
@@ -79,7 +79,7 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
    - [No flow control statements in finally blocks]()
    - [Immediately invoked function expressions (IIFEs) must be wrapped]()
 
-### [Control flow](#control-flow)
+### :large_blue_diamond: [Control flow](#control-flow)
 
    - [Keep else statement on same line as curly braces]()
    - [Use curly braces for multiline if statements]()
@@ -92,7 +92,7 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
    - [No duplicate case labels in switch statements]()
    - [Use break to prevent fall-through in switch cases]()
 
-### [Class and Object](#class-and-object)
+### :large_blue_diamond: [Class and Object](#class-and-object)
 
    - [Constructor names must begin with capital letters]()
    - [Constructor with no arguments must be invoked with parentheses]()
@@ -110,13 +110,13 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
    - [No calling global object properties as functions]()
    - [No unnecessary constructor]()
 
-### [RegExp](#regexp)
+### :large_blue_diamond: [RegExp](#regexp)
 
    - [No empty character classes in regular expressions]()
    - [No invalid regular expression string in RegExp constructors]()
    - [Avoid multiple spaces in regular expressions literals]()
 
-### [General](#general)
+### :large_blue_diamond: [General](#general)
 
    - [Quotes]()
    - [Use single import statement per module]()
