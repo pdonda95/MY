@@ -4,7 +4,7 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ### :large_blue_diamond: [Spacing](#spacing)
 
-   - [Keyword Spacing]()
+   - [Keyword Spacing](1-keyword-spacing)
    - [Multiple blank lines not allowed]()
    - [Semicolons must have a space after and no space before]()
    - [Unary operators must have a space after]()
@@ -126,6 +126,15 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
    - [Avoid semicolons]()
 
 ## Spacing
+
+1. Keyword Spacing
+```javascript
+if (condition) { ... }   // ✓ ok
+if(condition) { ... }    // ✗ avoid
+```
+
+
+
 ## Indentation
 ## Declaration
 ## Operators
