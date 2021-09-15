@@ -125,13 +125,13 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
    - [Use isNaN() when checking for NaN]()
    - [Avoid semicolons]()
 
-### Spacing
-### Indentation
-### Declaration
-### Operators
-### Comma
-### Function
-### Control flow
-### Class and Object
-### RegExp
-### General
+## Spacing
+## Indentation
+## Declaration
+## Operators
+## Comma
+## Function
+## Control flow
+## Class and Object
+## RegExp
+## General
