@@ -20,6 +20,7 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
    - [No whitespace between spread operators and their expressions](#14-no-whitespace-between-spread-operators-and-their-expressions)
    - [No space inside parentheses](#15-no-space-inside-parentheses)
    - [No spacing in template strings](#16-no-spacing-in-template-strings)
+   - [Infix operator must be spaced](#17-infix-operator-must-be-spaced)
 
 ### :large_blue_diamond: [Indentation](#indentation)
 
@@ -42,13 +43,12 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ### :large_blue_diamond: [Operators](#operators)
 
-   - [Assignment operator must be spaced]()
-   - [=== instead of ==]()
-   - [Ternary operator]()
-   - [No ternary operators when simpler alternative exist]()
-   - [No delete operator on variables]()
-   - [Avoid unnecessary boolean casts]()
-   - [typeof must be compared to a valid string]()
+   - [=== instead of ==](#1-instead-of)
+   - [Ternary operator](#2-ternary-operator)
+   - [No ternary operators when simpler alternative exist](#3-no-ternary-operators-when-simpler-alternative-exist)
+   - [No delete operator on variables](#4-no-delete-operator-on-variables)
+   - [Avoid unnecessary boolean casts](#5-avoid-unnecessary-boolean-casts)
+   - [typeof must be compared to a valid string](#6-typeof-must-be-compared-to-a-valid-string)
 
 ### :large_blue_diamond: [Comma](#comma)
 
@@ -263,6 +263,19 @@ const message = `Hello, ${ name }`    // ✗ avoid
 const message = `Hello, ${name}`      // ✓ ok
 ```
 
+#### 17. Infix operator must be spaced
+
+```javascript
+// ✗ avoid
+let x=2
+let message = 'hello, '+name+'!'
+```
+```javascript
+// ✓ ok
+let x = 2
+let message = 'hello, ' + name + '!'
+```
+
 ## Indentation
 
 #### 1. Avoid mixing spaces and tabs for indentation use tabs throughout
@@ -426,6 +439,76 @@ name = 'value'          // ✓ ok
 ```
 
 ## Operators
+
+#### 1. === instead of ==
+
+```javascript
+// ✗ avoid
+if (name == 'John') {}
+if (name != 'John') {}
+```
+```javascript
+// ✓ ok
+if (name === 'John') {}
+if (name !== 'John') {}
+```
+
+#### 2. Ternary operator
+
+```javascript
+// ✗ avoid
+let location = env.development ?
+               'localhost' :
+               'www.api.com'
+```
+```javascript
+// ✓ ok
+let location = env.development ? 'localhost' : 'www.api.com'
+_or_
+let location = env.development
+               ? 'localhost'
+               : 'www.api.com'
+```
+
+#### 3. No ternary operators when simpler alternative exist
+
+```javascript
+let score = val ? val : 0     // ✗ avoid
+let score = val || 0          // ✓ ok
+```
+
+#### 4. No delete operator on variables
+
+```javascript
+// ✗ avoid
+let name
+delete name
+```
+
+#### 5. Avoid unnecessary boolean casts
+
+```javascript
+// ✗ avoid
+const result = true
+if (!!result) {
+  // code here
+}
+```
+```javascript
+// ✓ ok
+const result = true
+if (result) {
+  // code here
+}
+```
+
+#### 6. typeof must be compared to a valid string
+
+```javascript
+typeof name === 'undefimed'     // ✗ avoid
+typeof name === 'undefined'     // ✓ ok
+```
+
 ## Comma
 ## Function
 ## Control flow
