@@ -368,14 +368,14 @@ const discount = 0.5     // ✓ ok
 
 ```javascript
 // ✗ avoid
-let x = "some very \
-         long text";
+let x = 'some very \
+         long text';
 ```
 ```javascript
 // ✓ ok
-let x = "some very long text";
-let x = "some very " +
-        "long text";
+let x = 'some very long text';
+let x = 'some very ' +
+        'long text';
 ```
 
 #### 8. No redeclaring variables
@@ -510,6 +510,60 @@ typeof name === 'undefined'     // ✓ ok
 ```
 
 ## Comma
+
+#### 1. Spacing
+
+```javascript
+// ✗ avoid
+let list = [1,2,3,4]
+function greet (name,options) { ... }
+```
+```javascript
+// ✓ ok
+let list = [1, 2, 3, 4]
+function greet (name, options) { ... }
+```
+
+#### 2. Style
+
+```javascript
+// ✗ avoid
+let person = {
+      name: 'John'
+      ,age: 28
+}
+```
+```javascript
+// ✓ ok
+let person = {
+      name: 'John',
+      age:  28
+}
+```
+
+#### 3. Trailing commas not allowed
+
+```javascript
+if (doSomething(), !!test) {}   // ✗ avoid
+```
+
+#### 4. Avoid using comma operator
+
+```javascript
+// ✗ avoid
+let person = {
+   name: 'John',
+   age:  26,
+};
+```
+```javascript
+// ✓ ok
+let person = {
+   name: 'John',
+   age:  26
+};
+```
+
 ## Function
 ## Control flow
 ## Class and Object
