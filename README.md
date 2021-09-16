@@ -43,7 +43,7 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ### :large_blue_diamond: [Operators](#operators)
 
-   - [=== instead of ==](#1-instead-of)
+   - [=== instead of ==](#1-===-instead-of-==)
    - [Ternary operator](#2-ternary-operator)
    - [No ternary operators when simpler alternative exist](#3-no-ternary-operators-when-simpler-alternative-exist)
    - [No delete operator on variables](#4-no-delete-operator-on-variables)
