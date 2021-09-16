@@ -23,8 +23,8 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ### :large_blue_diamond: [Indentation](#indentation)
 
-   - [Avoid mixing spaces and tabs for indentation]()
-   - [Use tab]()
+   - [Avoid mixing spaces and tabs for indentation](#1-avoid-mixing-spaces-and-tabs-for-indentation)
+   - [Use tabs for indentation](#2-use-tabs-for-indentation)
 
 ### :large_blue_diamond: [Declaration](#declaration)
 
@@ -265,6 +265,29 @@ const message = `Hello, ${name}`      // ✓ ok
 ```
 
 ## Indentation
+
+#### 1. Avoid mixing spaces and tabs for indentation
+
+```javascript
+// ✗ avoid
+function add() {
+   var x = 10;    // tab
+   var y = 10;    // tab
+  return x + y;   // 2 spaces
+}
+```
+
+#### 2. Use tabs for indentation
+
+```javascript
+// ✓ ok
+function add() {
+   var x = 10;    // tab
+   var y = 10;    // tab
+   return x + y;  // tab
+}
+```
+
 ## Declaration
 ## Operators
 ## Comma
