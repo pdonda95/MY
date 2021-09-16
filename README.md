@@ -23,23 +23,22 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ### :large_blue_diamond: [Indentation](#indentation)
 
-   - [Avoid mixing spaces and tabs for indentation](#1-avoid-mixing-spaces-and-tabs-for-indentation)
-   - [Use tabs for indentation](#2-use-tabs-for-indentation)
+   - [Avoid mixing spaces and tabs for indentation use tabs throughout](#1-avoid-mixing-spaces-and-tabs-for-indentation-use-tabs-throughout)
 
 ### :large_blue_diamond: [Declaration](#declaration)
 
-   - [Remove unused variables]()
-   - [Camelcase when naming variables and functions]()
-   - [Every variable declaration should have it’s own statement]()
-   - [Avoid modifying variables declared using const]()
-   - [Initialize to undefined is not allowed]()
-   - [Sparse arrays are not allowed]()
-   - [Use array literals instead of array constructors]()
-   - [No floating decimals]()
-   - [No multiline strings]()
-   - [No redeclaring variables]()
-   - [Avoid assigning variable to itself]()
-   - [Regular string must not contain template literal placeholders]()
+   - [Camelcase when naming variables and functions](#1-camelcase-when-naming-variables-and-functions)
+   - [Remove unused variables](#2-remove-unused-variables)
+   - [Every variable declaration should have its own statement](#3-every-variable-declaration-should-have-its-own-statement)
+   - [Use array literals instead of array constructors](#4-use-array-literals-instead-of-array-constructors)
+   - [Avoid modifying variables declared using const](#5-avoid-modifying-variables-declared-using-const)
+   - [No floating decimals](#6-no-floating-decimals)
+   - [No multiline strings](#7-no-multiline-strings)
+   - [No redeclaring variables](#8-no-redeclaring-variables)
+   - [Avoid assigning variable to itself](#9-avoid-assigning-variable-to-itself)
+   - [Sparse arrays are not allowed](#10-sparse-arrays-are-not-allowed)
+   - [Regular string must not contain template literal placeholders](#11-regular-string-must-not-contain-template-literal-placeholders)
+   - [Initialize to undefined is not allowed](#12-initialize-to-undefined-is-not-allowed)
 
 ### :large_blue_diamond: [Operators](#operators)
 
@@ -136,14 +135,14 @@ if (condition) { ... }   // ✓ ok
 
 ```javascript
 // ✗ avoid
-var value = 'hello world'
+let value = 'hello world'
 
 
 console.log(value)
 ```
 ```javascript
 // ✓ ok
-var value = 'hello world'
+let value = 'hello world'
 console.log(value)
 ```
 
@@ -182,10 +181,10 @@ function foo () { return true }  // ✓ ok
 #### 7. Space between colon and value in key value pairs
 
 ```javascript
-var obj = { 'key' : 'value' }    // ✗ avoid
-var obj = { 'key' :'value' }     // ✗ avoid
-var obj = { 'key':'value' }      // ✗ avoid
-var obj = { 'key': 'value' }     // ✓ ok
+let obj = { 'key' : 'value' }    // ✗ avoid
+let obj = { 'key' :'value' }     // ✗ avoid
+let obj = { 'key':'value' }      // ✗ avoid
+let obj = { 'key': 'value' }     // ✓ ok
 ```
 
 #### 8. Do not use multiple spaces
@@ -266,29 +265,166 @@ const message = `Hello, ${name}`      // ✓ ok
 
 ## Indentation
 
-#### 1. Avoid mixing spaces and tabs for indentation
+#### 1. Avoid mixing spaces and tabs for indentation use tabs throughout
 
 ```javascript
 // ✗ avoid
 function add() {
-   var x = 10;    // tab
-   var y = 10;    // tab
+   let x = 10;    // tab
+   let y = 10;    // tab
   return x + y;   // 2 spaces
 }
 ```
-
-#### 2. Use tabs for indentation
-
 ```javascript
 // ✓ ok
 function add() {
-   var x = 10;    // tab
-   var y = 10;    // tab
+   let x = 10;    // tab
+   let y = 10;    // tab
    return x + y;  // tab
 }
 ```
 
 ## Declaration
+
+#### 1. Camelcase when naming variables and functions
+
+```javascript
+// ✗ avoid
+function my_function () { }
+let my_var = 'hello'
+```
+```javascript
+// ✓ ok
+let myVar = 'hello'
+function myFunction () { }
+```
+
+#### 2. Remove unused variables 
+
+```javascript
+// ✗ avoid
+function add(a, b) {
+   let c = 10;    // unused variable
+   return a + b;
+}
+```
+```javascript
+// ✓ ok
+function add(a, b) {
+   return a + b;
+}
+```
+
+#### 3. Every variable declaration should have its own statement
+
+```javascript
+// ✗ avoid
+let a = 10, b = 10, c = 10;
+let a = 10,
+    b = 10,
+    c = 10;
+```
+```javascript
+// ✓ ok
+let a = 10;
+let b = 10;
+```
+
+#### 4. Use array literals instead of array constructors
+
+```javascript
+let nums = new Array(1, 2, 3)   // ✗ avoid
+let nums = [1, 2, 3]            // ✓ ok
+```
+
+#### 5. Avoid modifying variables declared using const
+
+```javascript
+const score = 100
+score = 125       // ✗ avoid
+```
+
+#### 6. No floating decimals
+
+```javascript
+const discount = .5      // ✗ avoid
+const discount = 0.5     // ✓ ok
+```
+
+#### 7. No multiline strings
+
+```javascript
+// ✗ avoid
+let x = "some very \
+         long text";
+```
+```javascript
+// ✓ ok
+let x = "some very long text";
+let x = "some very " +
+        "long text";
+```
+
+#### 8. No redeclaring variables
+
+```javascript
+// ✗ avoid
+let name = 'John'
+let name = 'Jane'
+```
+```javascript
+// ✓ ok
+let name = 'John'
+name = 'Jane'         
+```
+
+#### 9. Avoid assigning variable to itself
+
+```javascript
+// ✗ avoid
+foo = foo;
+[name, age] = [name, age];
+```
+```javascript
+// ✓ ok
+name = personname;
+[a, b] = [b, a];        
+```
+
+#### 10. Sparse arrays are not allowed
+
+```javascript
+// ✗ avoid
+let fruits = ['apple',, 'orange']
+let numbers = [1, 2,,,, 6]
+```
+```javascript
+// ✓ ok
+let fruits = ['apple', 'banana', 'orange']
+let numbers = [1, 2, 3, 4, 5, 6]       
+```
+
+#### 11. Regular string must not contain template literal placeholders
+
+```javascript
+// ✗ avoid
+let message1 = 'Hello ${name}'
+let message2 = "Hello ${name}"
+```
+```javascript
+// ✓ ok
+const message = `Hello ${name}`
+```
+
+#### 12. Initialize to undefined is not allowed
+
+```javascript
+let name = undefined    // ✗ avoid
+
+let name
+name = 'value'          // ✓ ok
+```
+
 ## Operators
 ## Comma
 ## Function
