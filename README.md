@@ -59,22 +59,22 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ### :large_blue_diamond: [Function](#function)
 
-   - [No duplicate arguments]()
-   - [No unnecessary parentheses around function expressions]()
-   - [No space between function identifiers and their invocation]()
-   - [No function declaration in nested blocks]()
-   - [Assignment in return statements must be surrounded by parentheses]()
-   - [Dot should be on same line as method]()
-   - [Avoid unnecessary function bindings]()
-   - [Avoid reassigning function declaration]()
-   - [No label that share a name with an in scope variable]()
-   - [No unnecessary nested blocks]()
-   - [Always handle function err parameter]()
-   - [No reassigning exceptions in catch clauses]()
-   - [When using try catch and throw only use Error object to throw an error]()
-   - [No unreachable code after return, throw, continue and break statements]()
-   - [No flow control statements in finally blocks]()
-   - [Immediately invoked function expressions (IIFEs) must be wrapped]()
+   - [No duplicate arguments](#1-no-duplicate-arguments)
+   - [No unnecessary parentheses around function expressions](#2-no-unnecessary-parentheses-around-function-expressions)
+   - [No space between function identifiers and their invocation](#3-no-space-between-function-identifiers-and-their-invocation)
+   - [No function declaration in nested blocks](#4-no-function-declaration-in-nested-blocks)
+   - [Assignment in return statements must be surrounded by parentheses](#5-assignment-in-return-statements-must-be-surrounded-by-parentheses)
+   - [Dot should be on same line as method](#6-dot-should-be-on-same-line-as-method)
+   - [Avoid unnecessary function bindings](#7-avoid-unnecessary-function-bindings)
+   - [Avoid reassigning function declaration](#8-avoid-reassigning-function-declaration)
+   - [No label that share a name with an in scope variable](#9-no-label-that-share-a-name-with-an-in-scope-variable)
+   - [No unnecessary nested blocks](#10-no-unnecessary-nested-blocks)
+   - [Always handle function err parameter](#11-always-handle-function-err-parameter)
+   - [No reassigning exceptions in catch clauses](#12-no-reassigning-exceptions-in-catch-clauses)
+   - [When using try catch and throw only use Error object to throw an error](#13-when-using-try-catch-and-throw-only-use-Error-object-to-throw-an-error)
+   - [No unreachable code after return, throw, continue and break statements](#14-no-unreachable-code-after-return,-throw,-continue-and-break-statements)
+   - [No flow control statements in finally blocks](#15-no-flow-control-statements-in-finally-blocks)
+   - [Immediately invoked function expressions (IIFEs) must be wrapped](#16-immediately-invoked-function-expressions-(IIFEs)-must-be-wrapped)
 
 ### :large_blue_diamond: [Control flow](#control-flow)
 
@@ -231,14 +231,14 @@ user.name       // ✓ ok
 // ✗ avoid
 if (user) {
                        
-  const name = getName()
+   const name = getName()
 
 }
 ```
 ```javascript
 // ✓ ok
 if (user) {
-  const name = getName()    
+   const name = getName()    
 }
 ```
 
@@ -491,14 +491,14 @@ delete name
 // ✗ avoid
 const result = true
 if (!!result) {
-  // code here
+   // code here
 }
 ```
 ```javascript
 // ✓ ok
 const result = true
 if (result) {
-  // code here
+   // code here
 }
 ```
 
@@ -529,15 +529,15 @@ function greet (name, options) { ... }
 ```javascript
 // ✗ avoid
 let person = {
-      name: 'John'
-      ,age: 28
+   name: 'John'
+   ,age: 28
 }
 ```
 ```javascript
 // ✓ ok
 let person = {
-      name: 'John',
-      age:  28
+   name: 'John',
+   age:  28
 }
 ```
 
@@ -565,6 +565,119 @@ let person = {
 ```
 
 ## Function
+
+#### 1. No duplicate arguments
+
+```javascript
+// ✗ avoid
+function sum (a, b, a) {
+   // code here
+}
+```
+```javascript
+// ✓ ok
+function sum (a, b, c) {
+   // code here
+}
+```
+
+#### 2. No unnecessary parentheses around function expressions
+
+```javascript
+const myFunc = (function () { })   // ✗ avoid
+const myFunc = function () { }     // ✓ ok
+```
+
+#### 3. No space between function identifiers and their invocation
+
+```javascript
+console.log ('hello')   // ✗ avoid
+console.log('hello')    // ✓ ok
+```
+
+#### 4. No function declaration in nested blocks
+
+```javascript
+// ✗ avoid
+if (authenticated) {
+  function setAuthUser () {}
+}
+```
+```javascript
+// ✓ ok
+if (authenticated) {
+   // code here
+}
+function setAuthUser () {
+   // code here
+}
+```
+
+#### 5. Assignment in return statements must be surrounded by parentheses
+
+```javascript
+// ✗ avoid
+function sum (a, b) {
+   return result = a + b
+}
+```
+```javascript
+// ✓ ok
+function sum (a, b) {
+   return (result = a + b)
+}
+```
+
+#### 6. Dot should be on same line as method
+
+```javascript
+// ✗ avoid
+console.
+   log('hello')
+```
+```javascript
+// ✓ ok
+console
+   .log('hello')
+```
+
+#### 7. Avoid unnecessary function bindings
+
+```javascript
+// ✗ avoid
+const name = function () {
+   getName()
+}.bind(user)
+```
+```javascript
+// ✓ ok
+const name = function () {
+   this.getName()
+}.bind(user)
+```
+
+#### 8. Avoid reassigning function declaration
+
+```javascript
+// ✗ avoid
+function foo() {}
+foo = bar;
+```
+```javascript
+// ✓ ok
+var foo = function () {}
+foo = bar;
+```
+
+#### 9. No label that share a name with an in scope variable
+#### 10. No unnecessary nested blocks
+#### 11. Always handle function err parameter
+#### 12. No reassigning exceptions in catch clauses
+#### 13. When using try catch and throw only use Error object to throw an error
+#### 14. No unreachable code after return, throw, continue and break statements
+#### 15. No flow control statements in finally blocks
+#### 16. Immediately invoked function expressions (IIFEs) must be wrapped
+
 ## Control flow
 ## Class and Object
 ## RegExp
