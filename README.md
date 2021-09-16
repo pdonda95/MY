@@ -52,10 +52,10 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ### :large_blue_diamond: [Comma](#comma)
 
-   - [Spacing]()
-   - [Style]()
-   - [Trailing commas not allowed]()
-   - [Avoid using comma operator]()
+   - [Spacing](#1-spacing)
+   - [Style](#2-style)
+   - [Trailing commas not allowed](#3-trailing-commas-not-allowed)
+   - [Avoid using comma operator](#4-avoid-using-comma-operator)
 
 ### :large_blue_diamond: [Function](#function)
 
