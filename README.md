@@ -72,7 +72,7 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
    - [Always handle function err parameter](#11-always-handle-function-err-parameter)
    - [No reassigning exceptions in catch clauses](#12-no-reassigning-exceptions-in-catch-clauses)
    - [When using try catch and throw only use Error object to throw an error](#13-when-using-try-catch-and-throw-only-use-Error-object-to-throw-an-error)
-   - [No unreachable code after return, throw, continue and break statements](#14-no-unreachable-code-after-return,-throw,-continue-and-break-statements)
+   - [No unreachable code after return, throw, continue and break statements](#14-no-unreachable-code-after-return-throw-continue-and-break-statements)
    - [No flow control statements in finally blocks](#15-no-flow-control-statements-in-finally-blocks)
    - [Immediately invoked function expressions (IIFEs) must be wrapped](#16-immediately-invoked-function-expressions-(IIFEs)-must-be-wrapped)
 
