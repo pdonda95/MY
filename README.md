@@ -109,9 +109,9 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ### :large_blue_diamond: [RegExp](#regexp)
 
-   - [No empty character classes in regular expressions]()
-   - [No invalid regular expression string in RegExp constructors]()
-   - [Avoid multiple spaces in regular expressions literals]()
+   - [No empty character classes in regular expressions](#1-no-empty-character-classes-in-regular-expressions)
+   - [No invalid regular expression string in RegExp constructors](#2-no-invalid-regular-expression-string-in-regexp-constructors)
+   - [Avoid multiple spaces in regular expressions literals](#3-avoid-multiple-spaces-in-regular-expressions-literals)
 
 ### :large_blue_diamond: [General](#general)
 
@@ -1264,4 +1264,28 @@ class A {
 ```
 
 ## RegExp
+
+#### 1. No empty character classes in regular expressions
+
+```javascript
+const myRegex = /^abc[]/      // ✗ avoid
+const myRegex = /^abc[a-z]/   // ✓ ok
+```
+
+#### 2. No invalid regular expression string in RegExp constructors
+
+```javascript
+RegExp('[a-z')    // ✗ avoid
+RegExp('[a-z]')   // ✓ ok
+```
+
+#### 3. Avoid multiple spaces in regular expressions literals
+
+```javascript
+const regexp = /test   value/       // ✗ avoid
+
+const regexp = /test {3}value/      // ✓ ok
+const regexp = /test value/         // ✓ ok
+```
+
 ## General
