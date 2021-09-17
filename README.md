@@ -78,16 +78,16 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ### :large_blue_diamond: [Control flow](#control-flow)
 
-   - [Keep else statement on same line as curly braces]()
-   - [Use curly braces for multiline if statements]()
-   - [Avoid using const expressions in conditions except for loops]()
-   - [Avoid comparing variable to itself]()
-   - [No undefined conditions of loops]()
-   - [Avoid Yoda conditions]()
-   - [Wrap conditional assignments]()
-   - [No label statements]()
-   - [No duplicate case labels in switch statements]()
-   - [Use break to prevent fall-through in switch cases]()
+   - [Keep else statement on same line as curly braces](#1-keep-else-statement-on-same-line-as-curly-braces)
+   - [Use curly braces for multiline if statements](#2-use-curly-braces-for-multiline-if-statements)
+   - [Avoid using const expressions in conditions except for loops](#3-avoid-using-const-expressions-in-conditions-except-loops)
+   - [Avoid comparing variable to itself](#4-avoid-comparing-variable-to-itself)
+   - [No unmodified conditions of loops](#5-no-unmodified-conditions-of-loops)
+   - [Avoid Yoda conditions](#6-avoid-Yoda-conditions)
+   - [Wrap conditional assignments](#7-wrap-conditional-assignments)
+   - [No label statements](#8-no-label-statements)
+   - [No duplicate case labels in switch statements](#9-no-duplicate-case-labels-in-switch-statements)
+   - [Use break to prevent fall-through in switch cases](#10-use-break-to-prevent-fall-through-in-switch-cases)
 
 ### :large_blue_diamond: [Class and Object](#class-and-object)
 
@@ -859,6 +859,165 @@ const getName = (function () { })()   // ✓ ok
 ```
 
 ## Control flow
+
+#### 1. Keep else statement on same line as curly braces
+
+```javascript
+// ✗ avoid
+if (condition) {
+   // code here
+}
+else {
+   // code here
+}
+```
+```javascript
+// ✓ ok
+if (condition) {
+   // code here
+} else {
+   // code here
+}
+```
+
+#### 2. Use curly braces for multiline if statements
+
+```javascript
+// ✗ avoid
+if (options.quiet !== true)
+   console.log('done')
+```
+```javascript
+// ✓ ok
+if (options.quiet !== true) console.log('done')
+if (options.quiet !== true) {
+   console.log('done')
+}
+```
+
+#### 3. Avoid using const expressions in conditions (except loops)
+
+```javascript
+// ✗ avoid
+if (false) {
+   // code here
+}
+```
+```javascript
+// ✓ ok
+if (x === 0) {
+   // code here
+}
+while (true) {
+   // code here
+}
+```
+
+#### 4. Avoid comparing variable to itself
+
+```javascript
+if (score === score) {}    // ✗ avoid
+```
+
+#### 5. No unmodified conditions of loops
+
+```javascript
+for (let i = 0; i < items.length; j++) {...}    // ✗ avoid
+for (let i = 0; i < items.length; i++) {...}    // ✓ ok
+```
+
+#### 6. Avoid Yoda conditions
+
+```javascript
+if (42 === age) { }    // ✗ avoid
+if (age === 42) { }    // ✓ ok
+```
+
+#### 7. Wrap conditional assignments
+
+```javascript
+// ✗ avoid
+while (m = text.match(expr)) {
+   // code here
+}
+```
+```javascript
+// ✓ ok
+while ((m = text.match(expr))) {
+   // code here
+}
+```
+
+#### 8. No label statements
+
+```javascript
+// ✗ avoid
+label:
+   while(true) {
+      continue label;
+   }
+```
+```javascript
+// ✓ ok
+var f = {
+   label: "foo"
+};
+while (true) {
+   break;
+}
+```
+
+#### 9. No duplicate case labels in switch statements
+
+```javascript
+// ✗ avoid
+switch (a) {
+   case one:
+      break;
+   case 2:
+      break;
+   case one:
+      break;
+   default:
+      break;
+}
+```
+```javascript
+// ✓ ok
+switch (a) {
+   case 1:
+      break;
+   case 2:
+      break;
+   case 3:
+      break;
+   default:
+      break;
+}
+```
+
+#### 10. Use break to prevent fall-through in switch cases
+
+```javascript
+// ✗ avoid
+switch (filter) {
+   case 1:
+      doSomething()
+   case 2:
+      doSomethingElse()
+}
+```
+```javascript
+// ✓ ok
+switch (filter) {
+   case 1:
+      doSomething()
+      break
+   case 2:
+      doSomethingElse()
+}
+```
+
 ## Class and Object
 ## RegExp
 ## General
