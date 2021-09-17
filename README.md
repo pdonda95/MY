@@ -135,14 +135,14 @@ if (condition) { ... }   // ✓ ok
 
 ```javascript
 // ✗ avoid
-let value = 'hello world'
+var value = 'hello world'
 
 
 console.log(value)
 ```
 ```javascript
 // ✓ ok
-let value = 'hello world'
+var value = 'hello world'
 console.log(value)
 ```
 
@@ -181,10 +181,10 @@ function foo () { return true }  // ✓ ok
 #### 7. Space between colon and value in key value pairs
 
 ```javascript
-let obj = { 'key' : 'value' }    // ✗ avoid
-let obj = { 'key' :'value' }     // ✗ avoid
-let obj = { 'key':'value' }      // ✗ avoid
-let obj = { 'key': 'value' }     // ✓ ok
+var obj = { 'key' : 'value' }    // ✗ avoid
+var obj = { 'key' :'value' }     // ✗ avoid
+var obj = { 'key':'value' }      // ✗ avoid
+var obj = { 'key': 'value' }     // ✓ ok
 ```
 
 #### 8. Do not use multiple spaces
@@ -267,13 +267,13 @@ const message = `Hello, ${name}`      // ✓ ok
 
 ```javascript
 // ✗ avoid
-let x=2
-let message = 'hello, '+name+'!'
+var x=2
+var message = 'hello, '+name+'!'
 ```
 ```javascript
 // ✓ ok
-let x = 2
-let message = 'hello, ' + name + '!'
+var x = 2
+var message = 'hello, ' + name + '!'
 ```
 
 ## Indentation
@@ -283,16 +283,16 @@ let message = 'hello, ' + name + '!'
 ```javascript
 // ✗ avoid
 function add() {
-   let x = 10;    // tab
-   let y = 10;    // tab
+   var x = 10;    // tab
+   var y = 10;    // tab
   return x + y;   // 2 spaces
 }
 ```
 ```javascript
 // ✓ ok
 function add() {
-   let x = 10;    // tab
-   let y = 10;    // tab
+   var x = 10;    // tab
+   var y = 10;    // tab
    return x + y;  // tab
 }
 ```
@@ -304,11 +304,11 @@ function add() {
 ```javascript
 // ✗ avoid
 function my_function () { }
-let my_var = 'hello'
+var my_var = 'hello'
 ```
 ```javascript
 // ✓ ok
-let myVar = 'hello'
+var myVar = 'hello'
 function myFunction () { }
 ```
 
@@ -317,7 +317,7 @@ function myFunction () { }
 ```javascript
 // ✗ avoid
 function add(a, b) {
-   let c = 10;    // unused variable
+   var c = 10;    // unused variable
    return a + b;
 }
 ```
@@ -332,22 +332,22 @@ function add(a, b) {
 
 ```javascript
 // ✗ avoid
-let a = 10, b = 10, c = 10;
-let a = 10,
+var a = 10, b = 10, c = 10;
+var a = 10,
     b = 10,
     c = 10;
 ```
 ```javascript
 // ✓ ok
-let a = 10;
-let b = 10;
+var a = 10;
+var b = 10;
 ```
 
 #### 4. Use array literals instead of array constructors
 
 ```javascript
-let nums = new Array(1, 2, 3)   // ✗ avoid
-let nums = [1, 2, 3]            // ✓ ok
+var nums = new Array(1, 2, 3)   // ✗ avoid
+var nums = [1, 2, 3]            // ✓ ok
 ```
 
 #### 5. Avoid modifying variables declared using const
@@ -368,13 +368,13 @@ const discount = 0.5     // ✓ ok
 
 ```javascript
 // ✗ avoid
-let x = 'some very \
+var x = 'some very \
          long text';
 ```
 ```javascript
 // ✓ ok
-let x = 'some very long text';
-let x = 'some very ' +
+var x = 'some very long text';
+var x = 'some very ' +
         'long text';
 ```
 
@@ -382,12 +382,12 @@ let x = 'some very ' +
 
 ```javascript
 // ✗ avoid
-let name = 'John'
-let name = 'Jane'
+var name = 'John'
+var name = 'Jane'
 ```
 ```javascript
 // ✓ ok
-let name = 'John'
+var name = 'John'
 name = 'Jane'         
 ```
 
@@ -408,21 +408,21 @@ name = personname;
 
 ```javascript
 // ✗ avoid
-let fruits = ['apple',, 'orange']
-let numbers = [1, 2,,,, 6]
+var fruits = ['apple',, 'orange']
+var numbers = [1, 2,,,, 6]
 ```
 ```javascript
 // ✓ ok
-let fruits = ['apple', 'banana', 'orange']
-let numbers = [1, 2, 3, 4, 5, 6]       
+var fruits = ['apple', 'banana', 'orange']
+var numbers = [1, 2, 3, 4, 5, 6]       
 ```
 
 #### 11. Regular string must not contain template literal placeholders
 
 ```javascript
 // ✗ avoid
-let message1 = 'Hello ${name}'
-let message2 = "Hello ${name}"
+var message1 = 'Hello ${name}'
+var message2 = "Hello ${name}"
 ```
 ```javascript
 // ✓ ok
@@ -432,9 +432,9 @@ const message = `Hello ${name}`
 #### 12. Initialize to undefined is not allowed
 
 ```javascript
-let name = undefined    // ✗ avoid
+var name = undefined    // ✗ avoid
 
-let name
+var name
 name = 'value'          // ✓ ok
 ```
 
@@ -457,15 +457,15 @@ if (name !== 'John') {}
 
 ```javascript
 // ✗ avoid
-let location = env.development ?
+var location = env.development ?
                'localhost' :
                'www.api.com'
 ```
 ```javascript
 // ✓ ok
-let location = env.development ? 'localhost' : 'www.api.com'
+var location = env.development ? 'localhost' : 'www.api.com'
 _or_
-let location = env.development
+var location = env.development
                ? 'localhost'
                : 'www.api.com'
 ```
@@ -473,15 +473,15 @@ let location = env.development
 #### 3. No ternary operators when simpler alternative exist
 
 ```javascript
-let score = val ? val : 0     // ✗ avoid
-let score = val || 0          // ✓ ok
+var score = val ? val : 0     // ✗ avoid
+var score = val || 0          // ✓ ok
 ```
 
 #### 4. No delete operator on variables
 
 ```javascript
 // ✗ avoid
-let name
+var name
 delete name
 ```
 
@@ -515,12 +515,12 @@ typeof name === 'undefined'     // ✓ ok
 
 ```javascript
 // ✗ avoid
-let list = [1,2,3,4]
+var list = [1,2,3,4]
 function greet (name,options) { ... }
 ```
 ```javascript
 // ✓ ok
-let list = [1, 2, 3, 4]
+var list = [1, 2, 3, 4]
 function greet (name, options) { ... }
 ```
 
@@ -528,14 +528,14 @@ function greet (name, options) { ... }
 
 ```javascript
 // ✗ avoid
-let person = {
+var person = {
    name: 'John'
    ,age: 28
 }
 ```
 ```javascript
 // ✓ ok
-let person = {
+var person = {
    name: 'John',
    age:  28
 }
@@ -551,14 +551,14 @@ if (doSomething(), !!test) {}   // ✗ avoid
 
 ```javascript
 // ✗ avoid
-let person = {
+var person = {
    name: 'John',
    age:  26,
 };
 ```
 ```javascript
 // ✓ ok
-let person = {
+var person = {
    name: 'John',
    age:  26
 };
@@ -670,13 +670,193 @@ foo = bar;
 ```
 
 #### 9. No label that share a name with an in scope variable
+
+```javascript
+// ✗ avoid
+var score = 100
+function game () {
+   score: while (true) {
+      score -= 10
+      if (score > 0) continue score
+      break
+   }
+}
+```
+```javascript
+// ✓ ok
+function foo() {
+  var q = t;
+}
+function bar() {
+q:
+  for(;;) {
+    break q;
+  }
+}
+```
+
 #### 10. No unnecessary nested blocks
+
+```javascript
+// ✗ avoid
+function myFunc () {
+   {               
+      myOtherFunc()
+   }
+}
+```
+```javascript
+// ✓ ok
+function myFunc () {
+   myOtherFunc()
+}
+```
+
 #### 11. Always handle function err parameter
+
+```javascript
+// ✗ avoid
+run(function (err) {
+   window.alert('done')
+})
+```
+```javascript
+// ✓ ok
+run(function (err) {
+   if (err) throw err
+   window.alert('done')
+})
+```
+
 #### 12. No reassigning exceptions in catch clauses
+
+```javascript
+// ✗ avoid
+try {
+   // code here
+} catch (e) {
+   e = 'new value'
+}
+```
+```javascript
+// ✓ ok
+try {
+   // code here
+} catch (e) {
+   const newVal = 'new value'
+}
+```
+
 #### 13. When using try catch and throw only use Error object to throw an error
+
+```javascript
+throw 'error'               // ✗ avoid
+throw new Error('error')    // ✓ ok
+```
+
 #### 14. No unreachable code after return, throw, continue and break statements
+
+```javascript
+// ✗ avoid
+function foo() {
+   return true;
+   console.log("done");
+}
+function bar() {
+   throw new Error("Oops!");
+   console.log("done");
+}
+while(value) {
+   break;
+   console.log("done");
+}
+function baz() {
+   if (Math.random() < 0.5) {
+      return;
+   } else {
+      throw new Error();
+   }
+   console.log("done");
+}
+```
+```javascript
+// ✓ ok
+function foo() {
+   return bar();
+   function bar() {
+      return 1;
+   }
+}
+function bar() {
+   return x;
+   var x;
+}
+switch (foo) {
+   case 1:
+      break;
+      var x;
+}
+```
+
 #### 15. No flow control statements in finally blocks
+
+```javascript
+// ✗ avoid
+let foo = function() {
+   try {
+      return 1;
+   } catch(err) {
+      return 2;
+   } finally {
+      return 3;
+   }
+};
+```
+```javascript
+// ✓ ok
+let foo = function() {
+   try {
+      return 1;
+   } catch(err) {
+      return 2;
+   } finally {
+      console.log("hola!");
+   }
+};
+let foo = function() {
+   try {
+      return 1;
+   } catch(err) {
+      return 2;
+   } finally {
+      let a = function() {
+         return "hola!";
+      }
+   }
+};
+let foo = function() {
+   try {
+      return 1;
+   } catch(err) {
+      return 2;
+   } finally {
+      switch(a) {
+         case 1: {
+            console.log("hola!")
+            break;
+         }
+      }
+   }
+};
+```
+
 #### 16. Immediately invoked function expressions (IIFEs) must be wrapped
+
+```javascript
+const getName = function () { }()     // ✗ avoid
+const getName = (function () { }())   // ✓ ok
+const getName = (function () { })()   // ✓ ok
+```
 
 ## Control flow
 ## Class and Object
