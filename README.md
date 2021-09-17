@@ -1016,7 +1016,7 @@ switch (filter) {
    case 2:
       doSomethingElse()
 }
-```javascript
+```
 
 ## Class and Object
 
