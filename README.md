@@ -91,21 +91,21 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ### :large_blue_diamond: [Class and Object](#class-and-object)
 
-   - [Constructor names must begin with capital letters]()
-   - [Constructor with no arguments must be invoked with parentheses]()
-   - [Constructor of derived class must call super]()
-   - [Super must be called before using this keyword]()
-   - [Avoid modifying variables of class declaration]()
-   - [Maintain consistency of newlines between object properties]()
-   - [Object must contain a getter when a setter is defined]()
-   - [No duplicate name in class members]()
-   - [No duplicate keys in object literals]()
-   - [No new without assigning object to a variable]()
-   - [No using the Function constructor]()
-   - [No using the Object constructor]()
-   - [No using the Symbol constructor]()
-   - [No calling global object properties as functions]()
-   - [No unnecessary constructor]()
+   - [Constructor names must begin with capital letters](#1-constructor-names-must-begin-with-capital-letters)
+   - [Constructor with no arguments must be invoked with parentheses](#2-constructor-with-no-arguments-must-be-invoked-with-parentheses)
+   - [Constructor of derived class must call super](#3-constructor-of-derived-class-must-call-super)
+   - [Super must be called before using this keyword](#4-super-must-be-called-before-using-this-keyword)
+   - [Avoid modifying variables of class declaration](#5-avoid-modifying-variables-of-class-declaration)
+   - [Maintain consistency of newlines between object properties](#6-maintain-consistency-of-newlines-between-object-properties)
+   - [Object must contain a getter when a setter is defined](#7-object-must-contain-a-getter-when-a-setter-is-defined)
+   - [No duplicate name in class members](#8-no-duplicate-name-in-class-members)
+   - [No duplicate keys in object literals](#9-no-duplicate-keys-in-object-literals)
+   - [No new without assigning object to a variable](#10-no-new-without-assigning-object-to-a-variable)
+   - [No using the Function constructor](#11-no-using-the-Function-constructor)
+   - [No using the Object constructor](#12-no-using-the-Object-constructor)
+   - [No using the Symbol constructor](#13-no-using-the-Symbol-constructor)
+   - [No calling global object properties as functions](#14-no-calling-global-object-properties-as-functions)
+   - [No unnecessary constructor](#15-no-unnecessary-constructor)
 
 ### :large_blue_diamond: [RegExp](#regexp)
 
@@ -1016,8 +1016,252 @@ switch (filter) {
    case 2:
       doSomethingElse()
 }
-```
+```javascript
 
 ## Class and Object
+
+#### 1. Constructor names must begin with capital letters
+
+```javascript
+function animal () {}
+var dog = new animal()        // ✗ avoid
+
+function Animal () {}
+var dog = new Animal()        // ✓ ok
+```
+
+#### 2. Constructor with no arguments must be invoked with parentheses
+
+```javascript
+function Animal () {}
+var dog = new Animal       // ✗ avoid
+var dog = new Animal()     // ✓ ok
+```
+
+#### 3. Constructor of derived class must call super
+
+```javascript
+class Dog {
+   constructor () {
+      super()                    // ✗ avoid
+      this.legs = 4
+   }
+}
+class Dog extends Animal {
+   constructor () {              // ✗ avoid
+      this.legs = 4
+   }
+}
+class Dog extends Animal {
+   constructor () {
+      super()                    // ✓ ok
+      this.legs = 4
+   }
+}
+```
+
+#### 4. Super must be called before using this keyword
+
+```javascript
+// ✗ avoid
+class A extends B {
+    constructor() {
+        this.a = 0;
+        super();
+    }
+}
+```
+```javascript
+// ✓ ok
+class A extends B {
+    constructor() {
+        super();
+        this.a = 0;
+    }
+}
+```
+
+#### 5. Avoid modifying variables of class declaration
+
+```javascript
+// ✗ avoid
+class A { }
+A = 0;
+```
+```javascript
+// ✓ ok
+let A = class A { }
+A = 0;   // A is a variable.
+```
+
+#### 6. Maintain consistency of newlines between object properties
+
+```javascript
+// ✗ avoid
+const user = {
+   name: 'Jane Doe', age: 30,
+   username: 'jdoe86'
+}
+```
+```javascript
+// ✓ ok
+const user = { name: 'Jane Doe', age: 30, username: 'jdoe86' }
+const user = {
+   name: 'Jane Doe',
+   age: 30,
+   username: 'jdoe86'
+}
+```
+
+#### 7. Object must contain a getter when a setter is defined
+
+```javascript
+// ✗ avoid
+var person = {
+   set name (value) {
+      this._name = value
+   }
+}
+```
+```javascript
+// ✓ ok
+var person = {
+   set name (value) {
+      this._name = value
+   },
+   get name () {
+      return this._name
+   }
+}
+```
+
+#### 8. No duplicate name in class members
+
+```javascript
+// ✗ avoid
+class Foo {
+   bar() { }
+   bar() { }
+}
+```
+```javascript
+// ✓ ok
+class Foo {
+   bar() { }
+   qux() { }
+}
+```
+
+#### 9. No duplicate keys in object literals
+
+```javascript
+// ✗ avoid
+var foo = {
+   bar: "baz",
+   bar: "qux"
+};
+```
+```javascript
+// ✓ ok
+var foo = {
+   bar: "baz",
+   qux: "qux"
+};
+```
+
+#### 10. No new without assigning object to a variable
+
+```javascript
+new Character()                     // ✗ avoid
+const character = new Character()   // ✓ ok
+```
+
+#### 11. No using the Function constructor
+
+```javascript
+// ✗ avoid
+var x = new Function("a", "b", "return a + b");
+var x = Function("a", "b", "return a + b");
+```
+```javascript
+// ✓ ok
+var x = function (a, b) {
+   return a + b;
+};
+```
+
+#### 12. No using the Object constructor
+
+```javascript
+// ✗ avoid
+var myObject = new Object();
+new Object();
+```
+```javascript
+// ✓ ok
+var myObject = new CustomObject();
+var myObject = {};
+
+var Object = function Object() {};
+new Object();
+```
+
+#### 13. No using the Symbol constructor
+
+```javascript
+// ✗ avoid
+var foo = new Symbol('foo');
+```
+```javascript
+// ✓ ok
+var foo = Symbol('foo');
+
+function bar(Symbol) {
+   const baz = new Symbol("baz");
+}
+```
+
+#### 14. No calling global object properties as functions
+
+```javascript
+// ✗ avoid
+var math = Math();
+var newMath = new Math();
+
+var json = JSON();
+var newJSON = new JSON();
+```
+```javascript
+// ✓ ok
+function area(r) {
+   return Math.PI * r * r;
+}
+var object = JSON.parse("{}");
+```
+
+#### 15. No unnecessary constructor
+
+```javascript
+// ✗ avoid
+class A {
+   constructor () {
+   }
+}
+class B extends A {
+   constructor (...args) {
+      super(...args);
+   }
+}
+```
+```javascript
+// ✓ ok
+class A { }
+class A {
+   constructor () {
+      doSomething();
+   }
+}
+```
+
 ## RegExp
 ## General
