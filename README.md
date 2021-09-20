@@ -115,12 +115,12 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ### :large_blue_diamond: [General](#general)
 
-   - [Quotes]()
-   - [Use single import statement per module]()
-   - [Renaming import, export and restructured assignments to the same name is not allowed]()
-   - [No unnecessary use of escape]()
-   - [Use isNaN() when checking for NaN]()
-   - [Avoid semicolons]()
+   - [Quotes](#1-quotes)
+   - [Use single import statement per module](#2-use-single-import-statement-per-module)
+   - [Renaming import export and restructured assignments to the same name is not allowed](#2-renaming-import-export-and-restructured-assignments-to-the-same-name-is-not-allowed)
+   - [No unnecessary use of escape](#3-no-unnecessary-use-of-escape)
+   - [Use isNaN function when checking for NaN](#4-use-isnan-function-when-checking-for-nan)
+   - [Avoid semicolons](#5-avoid-semicolons)
 
 ## Spacing
 
@@ -1289,3 +1289,34 @@ const regexp = /test value/         // ✓ ok
 ```
 
 ## General
+
+#### 1. Quotes
+
+```javascript
+console.log("hello there")    // ✗ avoid
+console.log(`hello there`)    // ✗ avoid
+
+console.log('hello there')    // ✓ ok
+$("<div class='box'>")        // ✓ ok
+console.log(`hello ${name}`)  // ✓ ok
+```
+
+#### 2. Use single import statement per module
+
+```javascript
+import { myFunc1 } from 'module'
+import { myFunc2 } from 'module'          // ✗ avoid
+
+import { myFunc1, myFunc2 } from 'module' // ✓ ok
+```
+
+#### 3. Renaming import export and restructured assignments to the same name is not allowed
+
+```javascript
+import { config as config } from './config'     // ✗ avoid
+import { config } from './config'               // ✓ ok
+```
+
+#### 4. No unnecessary use of escape
+#### 5. Use isNaN function when checking for NaN
+#### 6. Avoid semicolons
