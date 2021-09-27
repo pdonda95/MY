@@ -135,14 +135,14 @@ if (condition) { ... }   // ✓ ok
 
 ```javascript
 // ✗ avoid
-var value = 'hello world'
+let value = 'hello world'
 
 
 console.log(value)
 ```
 ```javascript
 // ✓ ok
-var value = 'hello world'
+let value = 'hello world'
 console.log(value)
 ```
 
@@ -181,10 +181,10 @@ function foo () { return true }  // ✓ ok
 #### 7. Space between colon and value in key value pairs
 
 ```javascript
-var obj = { 'key' : 'value' }    // ✗ avoid
-var obj = { 'key' :'value' }     // ✗ avoid
-var obj = { 'key':'value' }      // ✗ avoid
-var obj = { 'key': 'value' }     // ✓ ok
+let obj = { 'key' : 'value' }    // ✗ avoid
+let obj = { 'key' :'value' }     // ✗ avoid
+let obj = { 'key':'value' }      // ✗ avoid
+let obj = { 'key': 'value' }     // ✓ ok
 ```
 
 #### 8. Do not use multiple spaces
@@ -267,13 +267,13 @@ const message = `Hello, ${name}`      // ✓ ok
 
 ```javascript
 // ✗ avoid
-var x=2
-var message = 'hello, '+name+'!'
+let x=2
+let message = 'hello, '+name+'!'
 ```
 ```javascript
 // ✓ ok
-var x = 2
-var message = 'hello, ' + name + '!'
+let x = 2
+let message = 'hello, ' + name + '!'
 ```
 
 ## Indentation
@@ -283,16 +283,16 @@ var message = 'hello, ' + name + '!'
 ```javascript
 // ✗ avoid
 function add() {
-   var x = 10;    // tab
-   var y = 10;    // tab
+   let x = 10;    // tab
+   let y = 10;    // tab
   return x + y;   // 2 spaces
 }
 ```
 ```javascript
 // ✓ ok
 function add() {
-   var x = 10;    // tab
-   var y = 10;    // tab
+   let x = 10;    // tab
+   let y = 10;    // tab
    return x + y;  // tab
 }
 ```
@@ -304,11 +304,11 @@ function add() {
 ```javascript
 // ✗ avoid
 function my_function () { }
-var my_var = 'hello'
+let my_var = 'hello'
 ```
 ```javascript
 // ✓ ok
-var myVar = 'hello'
+let myVar = 'hello'
 function myFunction () { }
 ```
 
@@ -317,7 +317,7 @@ function myFunction () { }
 ```javascript
 // ✗ avoid
 function add(a, b) {
-   var c = 10;    // unused variable
+   let c = 10;    // unused variable
    return a + b;
 }
 ```
@@ -332,22 +332,22 @@ function add(a, b) {
 
 ```javascript
 // ✗ avoid
-var a = 10, b = 10, c = 10;
-var a = 10,
+let a = 10, b = 10, c = 10;
+let a = 10,
     b = 10,
     c = 10;
 ```
 ```javascript
 // ✓ ok
-var a = 10;
-var b = 10;
+let a = 10;
+let b = 10;
 ```
 
 #### 4. Use array literals instead of array constructors
 
 ```javascript
-var nums = new Array(1, 2, 3)   // ✗ avoid
-var nums = [1, 2, 3]            // ✓ ok
+let nums = new Array(1, 2, 3)   // ✗ avoid
+let nums = [1, 2, 3]            // ✓ ok
 ```
 
 #### 5. Avoid modifying variables declared using const
@@ -368,13 +368,13 @@ const discount = 0.5     // ✓ ok
 
 ```javascript
 // ✗ avoid
-var x = 'some very \
+let x = 'some very \
          long text';
 ```
 ```javascript
 // ✓ ok
-var x = 'some very long text';
-var x = 'some very ' +
+let x = 'some very long text';
+let x = 'some very ' +
         'long text';
 ```
 
@@ -382,12 +382,12 @@ var x = 'some very ' +
 
 ```javascript
 // ✗ avoid
-var name = 'John'
-var name = 'Jane'
+let name = 'John'
+let name = 'Jane'
 ```
 ```javascript
 // ✓ ok
-var name = 'John'
+let name = 'John'
 name = 'Jane'         
 ```
 
@@ -408,21 +408,21 @@ name = personname;
 
 ```javascript
 // ✗ avoid
-var fruits = ['apple',, 'orange']
-var numbers = [1, 2,,,, 6]
+let fruits = ['apple',, 'orange']
+let numbers = [1, 2,,,, 6]
 ```
 ```javascript
 // ✓ ok
-var fruits = ['apple', 'banana', 'orange']
-var numbers = [1, 2, 3, 4, 5, 6]       
+let fruits = ['apple', 'banana', 'orange']
+let numbers = [1, 2, 3, 4, 5, 6]       
 ```
 
 #### 11. Regular string must not contain template literal placeholders
 
 ```javascript
 // ✗ avoid
-var message1 = 'Hello ${name}'
-var message2 = "Hello ${name}"
+let message1 = 'Hello ${name}'
+let message2 = "Hello ${name}"
 ```
 ```javascript
 // ✓ ok
@@ -432,9 +432,9 @@ const message = `Hello ${name}`
 #### 12. Initialize to undefined is not allowed
 
 ```javascript
-var name = undefined    // ✗ avoid
+let name = undefined    // ✗ avoid
 
-var name
+let name
 name = 'value'          // ✓ ok
 ```
 
@@ -457,15 +457,15 @@ if (name !== 'John') {}
 
 ```javascript
 // ✗ avoid
-var location = env.development ?
+let location = env.development ?
                'localhost' :
                'www.api.com'
 ```
 ```javascript
 // ✓ ok
-var location = env.development ? 'localhost' : 'www.api.com'
+let location = env.development ? 'localhost' : 'www.api.com'
 _or_
-var location = env.development
+let location = env.development
                ? 'localhost'
                : 'www.api.com'
 ```
@@ -473,15 +473,15 @@ var location = env.development
 #### 3. No ternary operators when simpler alternative exist
 
 ```javascript
-var score = val ? val : 0     // ✗ avoid
-var score = val || 0          // ✓ ok
+let score = val ? val : 0     // ✗ avoid
+let score = val || 0          // ✓ ok
 ```
 
 #### 4. No delete operator on variables
 
 ```javascript
 // ✗ avoid
-var name
+let name
 delete name
 ```
 
@@ -515,12 +515,12 @@ typeof name === 'undefined'     // ✓ ok
 
 ```javascript
 // ✗ avoid
-var list = [1,2,3,4]
+let list = [1,2,3,4]
 function greet (name,options) { ... }
 ```
 ```javascript
 // ✓ ok
-var list = [1, 2, 3, 4]
+let list = [1, 2, 3, 4]
 function greet (name, options) { ... }
 ```
 
@@ -528,14 +528,14 @@ function greet (name, options) { ... }
 
 ```javascript
 // ✗ avoid
-var person = {
+let person = {
    name: 'John'
    ,age: 28
 }
 ```
 ```javascript
 // ✓ ok
-var person = {
+let person = {
    name: 'John',
    age:  28
 }
@@ -551,14 +551,14 @@ if (doSomething(), !!test) {}   // ✗ avoid
 
 ```javascript
 // ✗ avoid
-var person = {
+let person = {
    name: 'John',
    age:  26,
 };
 ```
 ```javascript
 // ✓ ok
-var person = {
+let person = {
    name: 'John',
    age:  26
 };
@@ -665,7 +665,7 @@ foo = bar;
 ```
 ```javascript
 // ✓ ok
-var foo = function () {}
+let foo = function () {}
 foo = bar;
 ```
 
@@ -673,7 +673,7 @@ foo = bar;
 
 ```javascript
 // ✗ avoid
-var score = 100
+let score = 100
 function game () {
    score: while (true) {
       score -= 10
@@ -789,12 +789,12 @@ function foo() {
 }
 function bar() {
    return x;
-   var x;
+   let x;
 }
 switch (foo) {
    case 1:
       break;
-      var x;
+      let x;
 }
 ```
 
@@ -959,7 +959,7 @@ label:
 ```
 ```javascript
 // ✓ ok
-var f = {
+let f = {
    label: "foo"
 };
 while (true) {
@@ -1024,18 +1024,18 @@ switch (filter) {
 
 ```javascript
 function animal () {}
-var dog = new animal()        // ✗ avoid
+let dog = new animal()        // ✗ avoid
 
 function Animal () {}
-var dog = new Animal()        // ✓ ok
+let dog = new Animal()        // ✓ ok
 ```
 
 #### 2. Constructor with no arguments must be invoked with parentheses
 
 ```javascript
 function Animal () {}
-var dog = new Animal       // ✗ avoid
-var dog = new Animal()     // ✓ ok
+let dog = new Animal       // ✗ avoid
+let dog = new Animal()     // ✓ ok
 ```
 
 #### 3. Constructor of derived class must call super
@@ -1117,7 +1117,7 @@ const user = {
 
 ```javascript
 // ✗ avoid
-var person = {
+let person = {
    set name (value) {
       this._name = value
    }
@@ -1125,7 +1125,7 @@ var person = {
 ```
 ```javascript
 // ✓ ok
-var person = {
+let person = {
    set name (value) {
       this._name = value
    },
@@ -1156,14 +1156,14 @@ class Foo {
 
 ```javascript
 // ✗ avoid
-var foo = {
+let foo = {
    bar: "baz",
    bar: "qux"
 };
 ```
 ```javascript
 // ✓ ok
-var foo = {
+let foo = {
    bar: "baz",
    qux: "qux"
 };
@@ -1180,12 +1180,12 @@ const character = new Character()   // ✓ ok
 
 ```javascript
 // ✗ avoid
-var x = new Function("a", "b", "return a + b");
-var x = Function("a", "b", "return a + b");
+let x = new Function("a", "b", "return a + b");
+let x = Function("a", "b", "return a + b");
 ```
 ```javascript
 // ✓ ok
-var x = function (a, b) {
+let x = function (a, b) {
    return a + b;
 };
 ```
@@ -1194,15 +1194,15 @@ var x = function (a, b) {
 
 ```javascript
 // ✗ avoid
-var myObject = new Object();
+let myObject = new Object();
 new Object();
 ```
 ```javascript
 // ✓ ok
-var myObject = new CustomObject();
-var myObject = {};
+let myObject = new CustomObject();
+let myObject = {};
 
-var Object = function Object() {};
+let Object = function Object() {};
 new Object();
 ```
 
@@ -1210,11 +1210,11 @@ new Object();
 
 ```javascript
 // ✗ avoid
-var foo = new Symbol('foo');
+let foo = new Symbol('foo');
 ```
 ```javascript
 // ✓ ok
-var foo = Symbol('foo');
+let foo = Symbol('foo');
 
 function bar(Symbol) {
    const baz = new Symbol("baz");
@@ -1225,18 +1225,18 @@ function bar(Symbol) {
 
 ```javascript
 // ✗ avoid
-var math = Math();
-var newMath = new Math();
+let math = Math();
+let newMath = new Math();
 
-var json = JSON();
-var newJSON = new JSON();
+let json = JSON();
+let newJSON = new JSON();
 ```
 ```javascript
 // ✓ ok
 function area(r) {
    return Math.PI * r * r;
 }
-var object = JSON.parse("{}");
+let object = JSON.parse("{}");
 ```
 
 #### 15. No unnecessary constructor
