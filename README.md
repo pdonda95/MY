@@ -117,10 +117,10 @@ This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
    - [Quotes](#1-quotes)
    - [Use single import statement per module](#2-use-single-import-statement-per-module)
-   - [Renaming import export and restructured assignments to the same name is not allowed](#2-renaming-import-export-and-restructured-assignments-to-the-same-name-is-not-allowed)
-   - [No unnecessary use of escape](#3-no-unnecessary-use-of-escape)
-   - [Use isNaN function when checking for NaN](#4-use-isnan-function-when-checking-for-nan)
-   - [Avoid semicolons](#5-avoid-semicolons)
+   - [Renaming import export and restructured assignments to the same name is not allowed](#3-renaming-import-export-and-restructured-assignments-to-the-same-name-is-not-allowed)
+   - [No unnecessary use of escape](#4-no-unnecessary-use-of-escape)
+   - [Use isNaN function when checking for NaN](#5-use-isnan-function-when-checking-for-nan)
+   - [Avoid semicolons](#6-avoid-semicolons)
 
 ## Spacing
 
@@ -1318,5 +1318,21 @@ import { config } from './config'               // ✓ ok
 ```
 
 #### 4. No unnecessary use of escape
+
+```javascript
+let message = 'Hell\o'  // ✗ avoid
+```
+
 #### 5. Use isNaN function when checking for NaN
+
+```javascript
+if (price === NaN) { }      // ✗ avoid
+if (isNaN(price)) { }       // ✓ ok
+```
+
 #### 6. Avoid semicolons
+
+```javascript
+window.alert('hi')   // ✗ avoid
+window.alert('hi');  // ✓ ok
+```
