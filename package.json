@@ -1,0 +1,42 @@
+{
+	"name": "my-js-style",
+	"version": "1.0.0",
+	"description": "Nova JS Styleguide",
+	"main": "index.js",
+	"files": [
+		"README.md",
+		"index.js",
+		".vscode",
+		".editorconfig"
+	],
+	"keywords": [
+		"js-style",
+		"nova"
+	],
+	"author": "Klick Inc",
+	"homepage": "https://github.com/pdonda95/MY#nova-javascript-style-guide",
+	"license": "UNLICENSED",
+	"bugs": {
+		"url": "https://github.com/pdonda95/MY/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com:pdonda95/MY.git"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	},
+	"scripts": {
+		"lint": "eslint"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"devDependencies": {
+		"eslint": "^7.32.0",
+		"eslint-config-standard": "^16.0.3",
+		"eslint-plugin-import": "^2.24.2",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^5.1.0"
+	}
+}

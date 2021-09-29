@@ -1,0 +1,15 @@
+{
+	"editor.formatOnSave": true,
+	"html.format.indentInnerHtml": true,
+	"[html]": {
+		"editor.linkedEditing": true
+	},
+	"javascript.format.insertSpaceBeforeFunctionParenthesis": true, // Add space before parantheses in function fname () instead if fname()
+	"[markdown]": {
+		"editor.formatOnSave": false
+	},
+	"eslint.format.enable": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	}
+}
