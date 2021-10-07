@@ -1,5 +1,5 @@
 # Nova JavaScript Style Guide
-
+# Nova JavaScript Style Guide
 This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ### :large_blue_diamond: [Spacing](#spacing)
@@ -131,7 +131,7 @@ if(condition) { ... }    // ✗ avoid
 if (condition) { ... }   // ✓ ok
 ```
 
-#### 2. Multiple blank lines not allowed 
+#### 2. Multiple blank lines not allowed
 
 ```javascript
 // ✗ avoid
@@ -230,7 +230,7 @@ user.name       // ✓ ok
 ```javascript
 // ✗ avoid
 if (user) {
-                       
+
    const name = getName()
 
 }
@@ -238,7 +238,7 @@ if (user) {
 ```javascript
 // ✓ ok
 if (user) {
-   const name = getName()    
+   const name = getName()
 }
 ```
 
@@ -312,7 +312,7 @@ let myVar = 'hello'
 function myFunction () { }
 ```
 
-#### 2. Remove unused variables 
+#### 2. Remove unused variables
 
 ```javascript
 // ✗ avoid
@@ -388,7 +388,7 @@ let name = 'Jane'
 ```javascript
 // ✓ ok
 let name = 'John'
-name = 'Jane'         
+name = 'Jane'
 ```
 
 #### 9. Avoid assigning variable to itself
@@ -401,7 +401,7 @@ foo = foo;
 ```javascript
 // ✓ ok
 name = personname;
-[a, b] = [b, a];        
+[a, b] = [b, a];
 ```
 
 #### 10. Sparse arrays are not allowed
@@ -414,7 +414,7 @@ let numbers = [1, 2,,,, 6]
 ```javascript
 // ✓ ok
 let fruits = ['apple', 'banana', 'orange']
-let numbers = [1, 2, 3, 4, 5, 6]       
+let numbers = [1, 2, 3, 4, 5, 6]
 ```
 
 #### 11. Regular string must not contain template literal placeholders
@@ -700,7 +700,7 @@ q:
 ```javascript
 // ✗ avoid
 function myFunc () {
-   {               
+   {
       myOtherFunc()
    }
 }
