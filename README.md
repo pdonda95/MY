@@ -1,5 +1,5 @@
 # Nova JavaScript Style Guide
-# Nova JavaScript Style Guide
+
 This style guide is based on [standardJS](https://standardjs.com/rules.html)
 
 ### :large_blue_diamond: [Spacing](#spacing)
